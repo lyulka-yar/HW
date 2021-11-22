@@ -115,7 +115,7 @@
 // }
 // console.log("***************************************");
 //
-// /*ONLY STRINGS*/
+// /*ONLY BOOLEAN*/
 // for (let i = 0; i < mix.length; i++) {
 //     if (typeof mix[i] === "boolean") {
 //         console.log(mix[i]);
@@ -129,3 +129,43 @@
 // - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
+//
+// emptyArray = [];
+//
+// mix = ["apple", false, 15, 125, true, "orange", "pamela", 124, "cherry", false];
+//
+// for (let i = 0; i < 10; i++) {
+//
+//     let data = emptyArray[i];
+//
+//     data = mix[i];
+//    
+//     emptyArray.push(data);
+// }
+// console.log(emptyArray)
+//
+/*10 - ітерацій крок - 1*/
+//
+// for (let i = 0; i < 10; i++) {
+//     console.log(i);
+//     document.write(`${i}<br>  `);
+// }
+/*100 - ітерацій крок - 1*/
+//
+// for (let i = 0; i < 100; i++) {
+//     console.log(i);
+//     document.write(`${i}<br>  `);
+// }
+/*100 - ітерацій крок - 2*/
+//
+        let arr = [];
+// for (let i = 0; i < 300; i+=3) {
+//         console.log(i);
+//         document.write(`${i}<br>`);
+//   arr.push(`${i}`);
+// }
+//     console.log(arr)
+//
+//
+
+
