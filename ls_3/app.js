@@ -60,13 +60,13 @@
 // let i = 0;
 //
 // while (i < fruits.length) {
-//     i++;
 //     document.write(`<h1>${fruits[i-1]}</h1>`);
+//     i++;
 // }
 //
 // while (i < fruits.length) {
-//     i++;
 //     document.write(`<h1>${i-1} ${fruits[i-1]}</h1>`);
+//     i++;
 // }
 
 
@@ -157,15 +157,147 @@
 //     document.write(`${i}<br>  `);
 // }
 /*100 - ітерацій крок - 2*/
-//
-        let arr = [];
+// //
+//         let arr = [];
 // for (let i = 0; i < 300; i+=3) {
 //         console.log(i);
 //         document.write(`${i}<br>`);
 //   arr.push(`${i}`);
 // }
 //     console.log(arr)
+
+/*100 - ітерацій - парні*/
+
+// for (let i = 0; i < 100; i++) {
+//         if (i % 2 === 0) {
+//                 console.log(i);
+//         }
+// }
+
+/*100 - ітерацій - непарні*/
+// let arr = [];
+// for (let i = 0; i < 100; i++) {
+//     if (i % 2 !== 0) {
+//         console.log(i);
+//     }
+// }
+
+// зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18] та:
+//     1. перебрати його циклом while
+let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+
+// let i = 0;
 //
+//  while (i < array.length) {
+//      console.log(array[i]);
+//      i++;
+//  }
+
+//     2. перебрати його циклом for
+
+// for (let i = 0; i < array.length; i++) {
+//     console.log(array[i]);
+// }
+
+//     3. перебрати циклом while та вивести  числа тільки з непарним індексом
+
+// i = 0;
 //
+// while (i < array.length) {
+//     if (i % 2 !== 0) {
+//         console.log(array[i]);
+//     }
+//     i++;
+// }
+
+// 4. перебрати циклом for та вивести  числа тільки з непарним індексом
+
+// for (let i = 0; i < array.length; i++) {
+//     if (i % 2 !== 0) {
+//         console.log(array[i]);
+//     }
+// }
+
+// 5. перебрати циклом while та вивести  числа тільки парні  значення
+
+// let i = 0;
+//
+// while (i < array.length) {
+//     if (array[i] % 2 === 0) {
+//         console.log(array[i]);
+//     }
+//         i++;
+// }
+
+// 6. перебрати циклом for та вивести  числа тільки парні  значення
+
+// for (let i = 0; i < array.length; i++) {
+//     let item = array[i];
+//     if (item % 2 === 0) {
+//         console.log(item);
+//     }
+// }
 
 
+// 7. замінити кожне число кратне 3 на слово "okten"
+
+// for (let i = 0; i < array.length; i++) {
+//     let item = array[i];
+//     if (item % 2 !==0) {
+//         console.log(item = "okten");
+//     }
+// }
+
+
+// 8. вивести масив в зворотньому порядку.
+
+//  
+
+
+// 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
+
+// let i = array.length;
+//
+//  while (i !== 0) {
+//      i--;
+//      console.log(array[i]);
+//  }
+
+// for (let i = array.length-1; i >= 0 ; i--) {
+//     console.log(array[i], i )
+// }
+
+// let i = array.length;
+//
+// while (i > 0) {
+//     i--;
+//     if (i % 2 !==0) {
+//         console.log(array[i]);
+//     }
+// }
+
+// for (let i = array.length; i >= 0; i--) {
+//     if (i % 2 !== 0) {
+//         console.log(array[i]);
+//     }
+// }
+
+// let i = array.length;
+// while (i > 0) {
+//     i--;
+//     if (i % 2 ===0){
+//         console.log(array[i]);
+//     }
+// }
+
+// for (let i = array.length-1; i >= 0; i--) {
+//     if (i % 2 === 0) {
+//         console.log(array[i]);
+//     }
+// }
+
+// for (let i = array.length - 1; i >= 0; i--) {
+//     if (i % 2 !== 0){
+//         console.log(array[i]);
+//     }
+// }
