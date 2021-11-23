@@ -421,30 +421,13 @@
 
 //  8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо елемент є числом - додати його в інший масив.
 
-// let timerHour = 2;
-// let timerMin = 59;
-// let timerSec = 59;
-// for (let hour = 0; hour < 3; hour++) {
-//     let min = 0;
-//     for (; min < 60; min++) {
-//         let sec = 0;
-//         for (; sec < 60; sec++) {
-//             console.log(`0${hour}: ${min}:${sec}`);
-//         }
+// let mixData = ["helllo", 123, false, 12, "yes", true, "2134", 54];
+// let numArr = [];
+// for (const data of mixData) {
+//     if (typeof (data) === "number") {
+//         numArr = data;
+//         console.log(numArr)
 //     }
-// }
-
-// let time = 2;
-// for (let min = 0; min < 3; min++) {
-//     let sec = 0;
-
-//     for (; sec < 60; sec++) {
-//         console.log(`0${min} min ${sec} sec`);
-//         if (time === min) {
-//             break;
-//         }
-//     }
-
 // }
 
 // - Дано 2 масиви з рівною кількістю об'єктів.
