@@ -301,3 +301,197 @@ let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 //         console.log(array[i]);
 //     }
 // }
+
+// for (let i = array.length; i >= 0 ; i--) {
+//     let item = array[i];
+//     if(i % 2 === 0) {
+//         console.log(item = "okten");
+//     }
+
+// }
+
+
+/*ADDITIONAL*/
+let emptyArray = [];
+
+
+
+// 1. Створити пустий масив та :
+//        a. заповнити його 50 парними числами за допомоги циклу.
+//        b. заповнити його 50 непарними числами за допомоги циклу.
+//        c. Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
+//        d. Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
+
+
+/*A*/
+//  for (let i = 0; i < 100; i++) {
+//     if(i % 2 === 0) {
+//         emptyArray.push(i);
+//     }
+// }
+// console.log(emptyArray);
+
+/*B*/
+//   for (let i = 0; i < 100; i++) {
+//      if(i % 2 !== 0) {
+//          emptyArray.push(i);
+//      }
+//  }
+//  console.log(emptyArray);
+
+/*С*/
+
+//   for (let i = 0; i < 20 ; i++) {
+//          emptyArray.push(Math.round(Math.random()*20));
+//  }
+//  console.log(emptyArray);
+
+/*D*/
+// let max = 732;
+// let min = 8;
+
+//  for (let i = 0; i < 20 ; i++) {
+//     emptyArray.push(Math.round(Math.random()*(max-min))+min);
+// }
+// console.log(emptyArray);
+
+
+//2. Вивести за допомогою console.log кожен третій елемен
+
+let numbers = [1, 4, 42, 41, 5434, 40, 124, 634, 22, 563, 102, 213, 753, 23, 10015, 4151]
+
+// for (let i = 2; i < numbers.length; i+=3) {
+//     const item = numbers[i];
+//         console.log(item);
+// }
+// console.log(numbers);
+
+
+//  3. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
+
+// for (let i = 2; i < numbers.length; i+=3) {
+//     const item = numbers[i];
+//         if(item % 2 === 0) {
+//             console.log(item);
+//         }
+// }
+// console.log(numbers);
+
+//  4. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним та записати їх в новий масив
+// let newArr = [];
+// for (let i = 0; i < numbers.length; i++) {
+//     const item = numbers[i];
+//     if(item % 2 === 0) {
+//         newArr.push(item);
+//     }
+// }
+// console.log(newArr);
+
+//  5. Вивести кожен елемент масиву, сусід справа якого є парним
+//   EXAMPLE: [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ] -> Має бути виведено 1, 9, 56
+//  let example = [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ];
+
+//  for (let i = 0; i < numbers.length; i++) {
+//      const element = numbers[i];
+//      if (element % 2 === 0) {
+//          console.log(numbers[i-1]);
+//     }
+// }
+
+//  6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
+// let total = 0;
+// let middle = [100, 250, 50, 168, 120, 345, 188];
+// for (let i = 0; i < middle.length; i++) {
+//     total += middle[i];
+// }
+// console.log(Math.round(total/middle.length));
+
+
+//  7. Створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+// let newEmptyArray = [];
+// let compareValue = 0;
+// for (let i = 0; i < 30; i++) {
+//     let randomArrray = [];
+//     let randomNumber = Math.floor((Math.random() * (2333 - 125)) + 125);
+//     randomArrray[i] = randomNumber;
+//     let multipli = newEmptyArray[i] = randomArrray[i] * 5;
+//     compareValue = randomNumber;
+//     console.log(compareValue, ":", multipli);
+// }
+// console.log(newEmptyArray);
+
+//  8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо елемент є числом - додати його в інший масив.
+
+// let timerHour = 2;
+// let timerMin = 59;
+// let timerSec = 59;
+// for (let hour = 0; hour < 3; hour++) {
+//     let min = 0;
+//     for (; min < 60; min++) {
+//         let sec = 0;
+//         for (; sec < 60; sec++) {
+//             console.log(`0${hour}: ${min}:${sec}`);
+//         }
+//     }
+// }
+
+// let time = 2;
+// for (let min = 0; min < 3; min++) {
+//     let sec = 0;
+
+//     for (; sec < 60; sec++) {
+//         console.log(`0${min} min ${sec} sec`);
+//         if (time === min) {
+//             break;
+//         }
+//     }
+
+// }
+
+// - Дано 2 масиви з рівною кількістю об'єктів.
+// Масиви:
+let usersWithId = [
+    {id: 1, name: 'vasya', age: 31, status: false},
+    {id: 2, name: 'petya', age: 30, status: true},
+    {id: 3, name: 'kolya', age: 29, status: true},
+    {id: 4, name: 'olya', age: 28, status: false}
+];
+
+let citiesWithId = [
+    {user_id: 3, country: 'USA', city: 'Portland'},
+    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+    {user_id: 2, country: 'Poland', city: 'Krakow'},
+    {user_id: 4, country: 'USA', city: 'Miami'}
+];
+
+let userWithAdress = [];
+
+// З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
+// Записати цей об'єкт в новий масив
+// Example:
+// let usersWithCities = [
+//     {
+//         id: 1, // <===
+//         name: 'vasya',
+//         age: 31,
+//         status: false,
+//         address: {
+//             user_id: 1, // <===
+//             country: 'Ukraine',
+//             city: 'Ternopil'
+//         }
+//     },
+//     // TO BE CONTINUED .....
+// ]
+
+
+
+
+// - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
+
+// - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
+
+
+// - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
+// - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
+// - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
