@@ -184,7 +184,7 @@
 
 // зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18] та:
 //     1. перебрати його циклом while
-let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 
 // let i = 0;
 //
@@ -312,8 +312,7 @@ let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 
 
 /*ADDITIONAL*/
-let emptyArray = [];
-
+// let emptyArray = [];
 
 
 // 1. Створити пустий масив та :
@@ -358,7 +357,7 @@ let emptyArray = [];
 
 //2. Вивести за допомогою console.log кожен третій елемен
 
-let numbers = [1, 4, 42, 41, 5434, 40, 124, 634, 22, 563, 102, 213, 753, 23, 10015, 4151]
+// let numbers = [1, 4, 42, 41, 5434, 40, 124, 634, 22, 563, 102, 213, 753, 23, 10015, 4151];
 
 // for (let i = 2; i < numbers.length; i+=3) {
 //     const item = numbers[i];
@@ -450,21 +449,21 @@ let numbers = [1, 4, 42, 41, 5434, 40, 124, 634, 22, 563, 102, 213, 753, 23, 100
 
 // - Дано 2 масиви з рівною кількістю об'єктів.
 // Масиви:
-let usersWithId = [
-    {id: 1, name: 'vasya', age: 31, status: false},
-    {id: 2, name: 'petya', age: 30, status: true},
-    {id: 3, name: 'kolya', age: 29, status: true},
-    {id: 4, name: 'olya', age: 28, status: false}
-];
-
-let citiesWithId = [
-    {user_id: 3, country: 'USA', city: 'Portland'},
-    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-    {user_id: 2, country: 'Poland', city: 'Krakow'},
-    {user_id: 4, country: 'USA', city: 'Miami'}
-];
-
-let userWithAdress = [];
+// let usersWithId = [
+//     {id: 1, name: 'vasya', age: 31, status: false},
+//     {id: 2, name: 'petya', age: 30, status: true},
+//     {id: 3, name: 'kolya', age: 29, status: true},
+//     {id: 4, name: 'olya', age: 28, status: false}
+// ];
+//
+// let citiesWithId = [
+//     {user_id: 3, country: 'USA', city: 'Portland'},
+//     {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+//     {user_id: 2, country: 'Poland', city: 'Krakow'},
+//     {user_id: 4, country: 'USA', city: 'Miami'}
+// ];
+//
+// let userWithAdress = [];
 
 // З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
 // Записати цей об'єкт в новий масив
@@ -484,14 +483,58 @@ let userWithAdress = [];
 //     // TO BE CONTINUED .....
 // ]
 
-
-
+// for (const user of usersWithId) {
+//     for (const city of citiesWithId) {
+//         if (city.user_id === user.id) {
+//             user.address = city;
+//         }
+//     }
+// }
+// userWithAdress.push(usersWithId);
+// console.log(userWithAdress);
 
 // - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
 
+// let example = [1, 2, 3, 5, 7, 9, 56, 8, 67, 53];
+//
+// for (let i = 0; i < example.length; i++) {
+//     if (example[i] % 2 === 0) {
+//         console.log(example[i]);
+//     }
+// }
+
 // - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
+
+// let empty = [];
+// let i = 0;
+//
+// while(i<example.length) {
+//     empty[i] = example[i];
+//     i++;
+// }
+// console.log(empty)
 
 
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+//
+// let letter = ["a", "b", "c"];
+// let word = "";
+
+// for (let i = 0; i < letter.length; i++) {
+// word+=letter[i]
+// }
+// console.log(word)
+
+// let j = 0;
+// while (j < letter.length) {
+//     word+=letter[j];
+//     j++;
+// }
+// console.log(word);
+
+// for (const string of letter) {
+//     word+=string;
+// }
+// console.log(word)
