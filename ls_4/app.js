@@ -96,9 +96,70 @@
 /*CLASSWORK*/
 
 // - створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!)
+
+// function minValue(a, b, c) {
+//     if (a < b && a < c) {
+//         console.log(a);
+//     } else if (b < a && b < c) {
+//         console.log(b);
+//     } else if (c < a && c < b) {
+//         console.log(c);
+//     } else {
+//         console.log("error");
+//     }
+// };
+// minValue(2, 51, 33);
+
 // - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
+
+// function minValue(a, b, c) {
+//     if (a > b && a > c) {
+//         console.log(a);
+//     } else if (b > a && b > c) {
+//         console.log(b);
+//     } else if (c > a && c > b) {
+//         console.log(c);
+//     } else {
+//         console.log("error");
+//     }
+// };
+// minValue(2, 51, 33);
+
 // - створити функцію яка повертає найбільше число з масиву
+
+let arrayOfNumbers = [3,32,124,44, 2 ,876,1221,999999];
+
+// function maxNumber(array) {
+//     let maxValue = 0;    
+
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         if (element > maxValue) {
+//              maxValue = element;
+//         }
+//     }   
+//     return maxValue;
+// }
+
+// document.write(maxNumber(arrayOfNumbers));
+
 // - створити функцію яка повертає найменьше число з масиву
+
+// function minValue(array) {
+//     let minValue = array[0];
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         if (element < minValue) {
+//             minValue = element;
+//         }
+//     }
+//     return minValue;
+// }
+// document.write(minValue(arrayOfNumbers));
+
+
+
+
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
 // - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
