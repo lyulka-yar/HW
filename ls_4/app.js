@@ -127,10 +127,10 @@
 
 // - створити функцію яка повертає найбільше число з масиву
 
-let arrayOfNumbers = [3,32,124,44, 2 ,876,1221,999999];
+let arrayOfNumbers = [3, 32, 124, 44, 2, 876, 1221, 999999];
 
 // function maxNumber(array) {
-//     let maxValue = 0;    
+//     let maxValue = array[0];
 
 //     for (let i = 0; i < array.length; i++) {
 //         const element = array[i];
@@ -158,12 +158,59 @@ let arrayOfNumbers = [3,32,124,44, 2 ,876,1221,999999];
 // document.write(minValue(arrayOfNumbers));
 
 
-
-
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
+let arrayOfNum = [1, 44, 12, 54, 76, 32];
+
+//
+// function sum(arr) {
+//     let total = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         total += arr[i];
+//     }
+//     console.log(total);
+// }
+// sum(arrayOfNum);
+
 // - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
+// function average(array) {
+//     let total = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         total += array[i];
+//     }
+//     console.log(total/array.length)
+// }
+// average(arrayOfNum);
+
+
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
+// function filter(array) {
+//     let max = array[0];
+//     let min = array[0];
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] < min) {
+//             min = array[i];
+//         } else if (array[i] > max) {
+//             max = array[i];
+//         } 
+//     }
+//     console.log(max)
+//     return min;
+// }
+//
+// filter(arrayOfNum);
+
 // - створити функцію яка заповнює масив рандомними числами
+
+// let emptyArr = [];
+//
+// function randomGenerator(number) {
+//     for (let i = 0; i <= 10; i++) {
+//         emptyArr = Math.floor((Math.random() * (50 - 6)) + 6);
+//         console.log(emptyArr)
+//     }
+// }
+// randomGenerator(arrayOfNum);
+
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
