@@ -213,24 +213,99 @@ let arrayOfNum = [1, 44, 12, 54, 76, 32];
 
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
+
+// function randomArrNumber(limit) {
+//     let array = [];
+//     for (let i = 0; i < limit; i++) {
+//     let randomNum = Math.round(Math.random()*limit);
+//      array.push(randomNum);
+//     }
+//     return array;;
+// }
+// randomArrNumber(100);
+
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 
+
+// function reversed(array) {
+//     let newArr = [];
+//     for (let i = array.length - 1; i >= 0; i--) {
+//         newArr[newArr.length] = array[i];
+//     }
+//     console.log(` new Array: ${newArr}`)
+//     console.log(` old Array: ${array}`)
+//     return newArr;
+// }
+//
+// reversed(arrayOfNum);
 
 /*ADDITIONAL*/
 
 // - створити функцію, яка якщо приймає один аргумент, просто вивдоить його, якщо два аргументи - складає або конкатенує їх між собою.
-//
+
+// function printF(value,x) {
+//     if (value && x) {
+//         document.write(`число - ${value+x} `);
+//     } else if (value) {
+//         document.write(`число - ${value} `);
+//     } else {document.write("empty")}
+// }
+// printF(12);
+
 // - створити функцію  яка приймає два масиви та скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
 //     EXAMPLE:
 // [1,2,3,4]
 //     [2,3,4,5]
 // результат
 //     [3,5,7,9]
+// let numbers_1 = [1, 2, 3, 4];
+// let numbers_2 = [2, 3, 4, 5];
+//
+// function checker(arr1, arr2) {
+//     let newArray = [];
+//     for (let i = 0; i < arr1.length; i++) {
+//         for (let j = 0; j < arr2.length; j++) {
+//             if (i === j) {
+//                 newArray[i] = arr1[i] + arr2[j];
+//             }
+//         }
+//     }
+//     console.log(newArray)
+//     return newArray;
+// }
+//
+// checker(numbers_1, numbers_2);
 //
 // - Створити функцію яка приймає масив будь яких объектів, та повертає масив ключів всіх обєктів
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ name, age, model ]
+// function objectKeys(obj) {
+//     let keys = [];
+//     for (const item of obj) {
+//         for (const itemKey in item) {
+//             keys.push(itemKey);
+//         }
+//     }
+//     console.log(keys);
+//     return keys;
+// }
+// objectKeys([{name: 'Dima', age: 13}, {model: 'Camry'}]);
+
 //
 //     - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
+
+
+// function valueOfObject(arr) {
+//     let empty = [];
+//     for (const element of arr) {
+//         for (const elementKey in element) {
+//             empty.push(element[elementKey]);
+//         }
+//     }
+//     console.log(empty)
+//     return empty;
+// }
+//
+// valueOfObject([{name: 'Dima', age: 13}, {model: 'Camry'}]);
