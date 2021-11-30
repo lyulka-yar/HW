@@ -3,7 +3,7 @@
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 
-let arr = ['hello world', 'lorem ipsum', 'javascript is cool'];
+// let arr = ['hello world', 'lorem ipsum', 'javascript is cool'];
 //
 // for (const string of arr) {
 //     console.log(string.length);
@@ -67,22 +67,16 @@ let arr = ['hello world', 'lorem ipsum', 'javascript is cool'];
 
 //
 // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
-let string = "hello world";
+// let string = "hello world";
 // let lowToUppercase = (str) => {
-//
 //     return str.charAt(0).toUpperCase() + str.slice(1);
 // }
-//
-//  document.write(lowToUppercase(string)); 
-
+//  document.write(lowToUppercase(string));
 //
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
-
-
 //
 // let capitalize = (str) => {
 //  return str.split(" ").map(word => word.charAt(0).toUpperCase()+word.slice(1));
-//
 // }
 // document.write(capitalize(string));
 
@@ -91,24 +85,65 @@ let string = "hello world";
 
 //
 // - Дано список імен.
-//     let n1 = 'Harry..Potter'
-// let n2 = 'Ron---Whisley'
-// let n3 = 'Hermione__Granger'
+//     let n1 = 'Harry..Potter';
+//     let n2 = 'Ron---Whisley';
+//     let n3 = 'Hermione__Granger';
 // Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
 // let n1 = 'Harry Potter'
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
 //
-//
+// let validator = (str) => {
+//     return str.replace("..", " ").replace("---"," ").replace("__"," ");
+// }
+// let result = validator(n3);
+// console.log(result);
+
 //     - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
+
+// let randomNum = [];
+// let randomizer = () => {
+//     for (let i = 0; i < 100; i++) {
+//         randomNum.push(Math.round(Math.random() * 100));
+//     }
+//     // console.log(randomNum)
+//     return randomNum;
+// };
+// randomizer();
+
 // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. Відсортувати його за допомоги sort
+
+// console.log(randomNum.sort((a, b) => a - b));
+
 // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. відфільтрувати  його за допомоги filter, залишивши тільки парні числа
+
+// console.log(randomNum.filter(number => number % 2 === 0 && number !== 0));
+
 // - створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) . за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові.
+
+// let random = randomNum.map(number => number.toString());
+// console.log(random);
+
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
-//     let nums = [11,21,3];
 // sortNums('ascending') // [3,11,21]
 // sortNums('descending') // [21,11,3]
 //
+// let nums = [11, 21, 3];
+//
+// function sortNums(direction) {
+//     nums.sort((a, b) => {
+//         if (direction === "ascending") {
+//             return a - b;
+//         } else if (direction === "descending") {
+//             return b - a;
+//         } else {
+//             console.log("error");
+//         }
+//     });
+//     console.log(nums);
+// }
+//
+// sortNums("descending");
 //
 // - є масив
 // let coursesAndDurationArray = [
@@ -120,100 +155,29 @@ let string = "hello world";
 //     {title: 'Frontend', monthDuration: 4}
 // ];
 // -- відсортувати його за спаданням за monthDuration
+
+// let sort = coursesAndDurationArray.sort((a, b) => {
+//     return b.monthDuration - a.monthDuration;
+// });
+// console.log(sort)
+
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-//
+
+// let filter = coursesAndDurationArray.filter(value => value.monthDuration > 5);
+// console.log(filter);
+
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
-
-/*ADDITIONAL*/
-
-// - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
-// Протестувати на значеннях
-// someemail@gmail.com
-// someeMAIL@gmail.com
-// someeMAIL@i.ua
-// some.email@gmail.com
 //
-// Примітка
-// Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні". Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
-//
-// - є масивlet coursesArray = [
-//     {
-//         title: 'JavaScript Complex',
-//         monthDuration: 5,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-//     },
-//     {
-//         title: 'Java Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'java core',
-//             'java advanced']
-//     },
-//     {
-//         title: 'Python Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'python core',
-//             'python advanced']
-//     },
-//     {
-//         title: 'QA Complex',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-//     },
-//     {
-//         title: 'FullStack',
-//         monthDuration: 7,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'react',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'node.js',
-//             'python',
-//             'java']
-//     },
-//     {
-//         title: 'Frontend',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+// let cutString = (str, n) => {
+//     let splited = [];
+//     while (str.length) {
+//         splited.push(str.substring(0,n))
+//         str = str.slice(n);
+//         str.length--;
 //     }
-// ];
-//
-//
-// відсортувати його в спадаючому порядку за кількістю елементів в полі modules
-//
-// - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
-//     let symb = "о", str = "Астрономия это наука о небесных объектах";
-// document.writeln(count(str, symb)) // 5
-//
-// - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
-//     let str = "Сила тяжести приложена к центру масс тела";
-// document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
+//     console.log(splited);
+//     return splited
+// };
+// document.write(cutString("наслаждение", 3));
+
