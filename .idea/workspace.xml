@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c66dbea6-9fe1-4322-8ba6-d251f5100ade" name="Changes" comment="HW90%">
-      <change afterPath="$PROJECT_DIR$/ls_4/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ls_4/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ls_7/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ls_7/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ls_7/сlosures.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ls_4/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/ls_4/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ls_4/app.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="210xGFD0QTEpkA83w6v9n2Wa6L1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,20 +53,34 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.last.introduce.type" value="LET" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ls_7" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Professional\Desktop\JS_okten_TASK\HW\ls_7" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Professional\Desktop\JS_okten_TASK\HW" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/ls_5/app.js" working-dir="$PROJECT_DIR$/ls_5">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.app.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,7 +105,17 @@
       <workItem from="1637559578665" duration="74000" />
       <workItem from="1637610129033" duration="6499000" />
       <workItem from="1637691354422" duration="911000" />
-      <workItem from="1637696443100" duration="10258000" />
+      <workItem from="1637696443100" duration="10351000" />
+      <workItem from="1637783142762" duration="2593000" />
+      <workItem from="1637869770173" duration="6850000" />
+      <workItem from="1637958921473" duration="4017000" />
+      <workItem from="1637967600220" duration="1295000" />
+      <workItem from="1638003053736" duration="23286000" />
+      <workItem from="1638218194465" duration="7552000" />
+      <workItem from="1638296674451" duration="13977000" />
+      <workItem from="1638314251964" duration="128000" />
+      <workItem from="1638314404788" duration="6000" />
+      <workItem from="1638385835371" duration="10120000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1637092093642</created>
@@ -135,7 +168,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add" />
@@ -143,6 +175,13 @@
     <MESSAGE value="ignore" />
     <MESSAGE value="HW90%" />
     <option name="LAST_COMMIT_MESSAGE" value="HW90%" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

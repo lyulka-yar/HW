@@ -297,8 +297,8 @@ let arrayOfNum = [1, 44, 12, 54, 76, 32];
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
 
 
-// function valueOfObject(arr) {
-//     let empty = [];
+// function valueOfObject(arr
+
 //     for (const element of arr) {
 //         for (const elementKey in element) {
 //             empty.push(element[elementKey]);
