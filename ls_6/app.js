@@ -132,9 +132,9 @@
 //
 // function sortNums(direction) {
 //     nums.sort((a, b) => {
-//         if (direction === "ascending") {
+//         if (direction === "asc") {
 //             return a - b;
-//         } else if (direction === "descending") {
+//         } else if (direction === "desc") {
 //             return b - a;
 //         } else {
 //             console.log("error");
@@ -143,7 +143,7 @@
 //     console.log(nums);
 // }
 //
-// sortNums("descending");
+// sortNums("desc");
 //
 // - є масив
 // let coursesAndDurationArray = [
