@@ -76,7 +76,7 @@
 // console.log(clients_order);
 
 /*CLASSWORK*/
-
+//
 // Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. 
 // додати в об'єкт функції:
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
@@ -84,59 +84,161 @@
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-
-function PlantOfCars(manufacturer, year, maxSpeed, engineVolume) {
-    this.manufacturer = manufacturer;
-    this.year = year;
-    this.maxSpeed = maxSpeed;
-    this.engineVolume = engineVolume;
-    this.drive = function (maxSpeed) {
-         console.log(`їдемо з і швидкістю ${maxSpeed}км на годину`)
-    }
-    this.info = function () {
-        for (const item in this) {
-            if (typeof this[item] !== "function") {
-                console.log(`${item}: ${this[item]}`);
-            };
-        }
-    }
-    this.increaceMaxSpeed = function (newSpeed) {
-        this.maxSpeed = this.maxSpeed + newSpeed;
-    }
-    this.changeYear = function (newValue) {
-        this.year = newValue;
-    }
-    this.addDriver = function (driver) {
-        this.driver = driver;
-    }
-}
-
-let plantOfCars = new PlantOfCars("Tesla", 2021, 60, 800);
-console.log(plantOfCars);
-
-let drive = plantOfCars.drive(80);
-let info = plantOfCars.info();
-let incMaxSpeed = plantOfCars.increaceMaxSpeed(50);
-let changeYear = plantOfCars.changeYear(2019);
-let addDriver = plantOfCars.addDriver("Marat");
-console.log("---------------")
-plantOfCars.info();
-
+//
+// function PlantOfCars(manufacturer, year, maxSpeed, engineVolume) {
+//     this.manufacturer = manufacturer;
+//     this.year = year;
+//     this.maxSpeed = maxSpeed;
+//     this.engineVolume = engineVolume;
+//     this.drive = function (maxSpeed) {
+//          console.log(`їдемо з і швидкістю ${maxSpeed}км на годину`)
+//     }
+//     this.info = function () {
+//         for (const item in this) {
+//             if (typeof this[item] !== "function") {
+//                 console.log(`${item}: ${this[item]}`);
+//             };
+//         }
+//     }
+//     this.increaceMaxSpeed = function (newSpeed) {
+//         this.maxSpeed = this.maxSpeed + newSpeed;
+//     }
+//     this.changeYear = function (newValue) {
+//         this.year = newValue;
+//     }
+//     this.addDriver = function (driver) {
+//         this.driver = driver;
+//     }
+// }
+//
+// let plantOfCars = new PlantOfCars("Tesla", 2021, 60, 800);
+// console.log(plantOfCars);
+//
+// let drive = plantOfCars.drive(80);
+// let info = plantOfCars.info();
+// let incMaxSpeed = plantOfCars.increaceMaxSpeed(50);
+// let changeYear = plantOfCars.changeYear(2019);
+// let addDriver = plantOfCars.addDriver("Marat");
+// console.log("---------------")
+// plantOfCars.info();
+//
 // - (Те саме, тільки через клас)
-// Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+// Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна.
+// додати в об'єкт функції:
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
 // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+// class plantOfCars {
 //
+//     constructor(model, manufacturer, year, maxSpeed, engineVolume) {
+//         this.model = model;
+//         this.manufacturer = manufacturer;
+//         this.year = year;
+//         this.maxSpeed = maxSpeed;
+//         this.engineVolume = engineVolume;
+//        
+//         this.drive = function (maxSpeed) {
+//             console.log(`Їдемо зі швидкістю ${maxSpeed}км на годину`)
+//         }
+//         this.info = function () {
+//             for (const item in this) {
+//                 if (item !== "function") {
+//                     console.log(`${item} - ${this[item]}`)
+//                 }
+//             }
+//         }
+//         this.increaseMaxSpeed = function (newSpeed) {
+//             this.maxSpeed = this.maxSpeed + newSpeed; 
+//         }
+//         this.changeYear = function (newValue) {
+//             this.year = newValue;
+//         }
+//         this.addDriver = function (driver) {
+//             this.driver = driver;
+//         }
+//     }
+// }
+//  let car = new plantOfCars('Scorpio',"Ford",1987,145,121);
+// console.log(car);
+// car.increaseMaxSpeed(150);
+// car.addDriver("Yaroslav");
+// car.changeYear(2021);
+// car.drive(75);
+// console.log("================");
+// console.log(car);
 //
 //
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
-
+//
+// class Cinderella {
+//     constructor(name, age, leftShoe) {
+//         this.name = name;
+//         this.age = age;
+//         this.leftShoe = leftShoe;
+//     }
+// }
+//
+// let girls = [
+//     new Cinderella("Rose", 23, 33),
+//     new Cinderella("Elisabeth", 21, 35),
+//     new Cinderella("Karlitha", 28, 37),
+//     new Cinderella("Karina", 44, 45),
+//     new Cinderella("Karina", 39, 45),
+//     new Cinderella("Santa-Luchia", 18, 34),
+//     new Cinderella("Anna-Maria", 14, 28.5),
+//     new Cinderella("Anna-Maria", 19, 25.5),
+//     new Cinderella("Anna-Maria", 34, 26),
+//     new Cinderella("Annabel", 74, 47)
+// ];
+//
+// class Prince {
+//     constructor(name, age, rightShoe) {
+//         this.name = name;
+//         this.age = age;
+//         this.rightShoe = rightShoe;
+//       /*FIRST EXAMPLE*/
+// this.happyCouple = function (girls) {
+//             let marriage = [];
+//     for (const girl of girls) {
+//         for (const shoe in girl) {
+//             if (this.rightShoe === girl[shoe]) {
+//                 marriage.push(girl,{name,age, rightShoe});
+//             } else {
+//                 console.log("maybe other time man")
+//             };
+//         }
+//     }
+//     console.log(marriage)
+// }
+//      /*SECOND EXAMPLE*/
+// this.findQueen = function (girls) {
+//     girls.find(value => {
+//         if (value.leftShoe === this.rightShoe) {
+//         let marriage = [];
+//         marriage.push(value,{name,age,rightShoe});
+//             for (const couple of marriage) {
+//                 for (const person in couple) {
+//                     document.write(`<div><b>${person}</b> : ${couple[person]}</div>`)
+//                 }
+//             }
+//         };
+//     });
+// }
+//      /*SECOND EXAMPLE*/
+//     }
+// }
+// let prince = new Prince("Philip Bedrosovych", 18,25.5);
+//
+///*FIRST EXAMPLE CALL*/
+// prince.happyCouple(girls);
+//
+///*SECOND EXAMPLE CALL*/
+// prince.findQueen(girls);
 
 /*ADDITIONAL*/
 // Створити клас або функцію конструктор, за допомоги якої можна створювати об'єкти наступного вигляду.
@@ -144,17 +246,17 @@ plantOfCars.info();
 //
 // {
 //     id: 1,
-//         name: 'Leanne Graham',
+//     name: 'Leanne Graham',
 //     username: 'Bret',
 //     email: 'Sincere@april.biz',
 //     address: {
-//     street: 'Kulas Light',
-//         suite: 'Apt. 556',
-//         city: 'Gwenborough',
-//         zipcode: '92998-3874',
-//         geo: {
-//         lat: '-37.3159',
-//             lng: '81.1496'
+//          street: 'Kulas Light',
+//          suite: 'Apt. 556',
+//          city: 'Gwenborough',
+//          zipcode: '92998-3874',
+//          geo: {
+//          lat: '-37.3159',
+//          lng: '81.1496'
 //     }
 // },
 //     phone: '1-770-736-8031 x56442',
@@ -166,6 +268,55 @@ plantOfCars.info();
 // }
 // }
 //
+// class User {
+//     constructor(id, username, email, name, phone, website) {
+//         this.id = id;
+//         this.username = username;
+//         this.email = email;
+//         this.name = name;
+//         this.phone = phone;
+//         this.website = website;
+//         this.address = function (street, suite, city, zipcode, geo, lat, lng) {
+//             this.street = street;
+//             this.suite = suite;
+//             this.city = city;
+//             this.zipcode = zipcode;
+//             this.geo = function (lat, lng) {
+//                 this.lat = lat;
+//                 this.lng = lng;
+//             };
+//         }
+//         this.company = function (name, catchPhrase, bs) {
+//             this.name = name;
+//             this.catchPhrase = catchPhrase;
+//             this.bs = bs;
+//         }
+//     }
+// }
+//
+// let user = new User(
+//     1,
+//     "SpiderMan",
+//     "duka@urk.net",
+//     "Piter Parker",
+//     "+4423124123",
+//     "https://spiderman.com");
+//
+// user.address("Washington str. 14",
+//     132,
+//     "New York",
+//     10001,);
+//
+// user.geo(
+//     -77.036389,
+//     38.895);
+// user.company(
+//     "Google",
+//     "Multi-layered client-server neural-net",
+//     "harness real-time e-markets");
+//
+// console.log(user)
+
 //
 // -  Створити функцію конструктор / клас  який описує об'єкт тегу
 // Поля :
@@ -198,3 +349,56 @@ plantOfCars.info();
 // ]
 //
 // }
+
+// - a,
+// -div,
+// -h1,
+// -span,
+// -input,
+// -form,
+// -option,
+// -select
+
+
+
+class Attribute {
+    constructor(titleOfTag, action) {
+        this.titleOfTag = titleOfTag;
+        this.action = action;
+        this.attrs = function (titleOfAttrs,actionOfAttrs) {
+            this.titleOfAttrs = titleOfAttrs;
+            this.actionOfAttrs = actionOfAttrs;
+           
+        };
+    }
+}
+
+let tagA = new Attribute("a", "Тег \<a> является одним из важных элементов HTML и предназначен для создания ссылок.");
+tagA.attrs(
+    "Активация ссылки с помощью комбинации клавиш. ",
+    "Устанавливает координаты активной области.",
+   );
+
+let tagDiv = new Attribute(
+    "div",
+    "Элемент \<div> является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого.");
+    tagDiv.attrs("align","Задает выравнивание содержимого тега.");
+let tagH1 = new Attribute(
+    "h1",
+    "HTML предлагает шесть заголовков разного уровня, которые показывают относительную важность секции, расположенной после заголовка. ");
+tagDiv.attrs("align","Определяет выравнивание заголовка. ");
+let tagHSpan = new Attribute(
+    "span",
+    "Тег \<span> предназначен для определения строчных элементов документа. ");
+tagDiv.attrs("accesskey","Позволяет получить доступ к элементу с помощью заданного сочетания клавиш. ");
+// console.log(tagA);
+// console.log(tagDiv);
+// console.log(tagH1);
+// console.log(tagSpan);
+// console.log(tagInput);
+// console.log(tagForm);
+// console.log(tagOption);
+// console.log(tagSelect);
+
+
+
