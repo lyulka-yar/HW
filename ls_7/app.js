@@ -360,15 +360,13 @@
 // -select
 
 
-
 class Attribute {
     constructor(titleOfTag, action) {
         this.titleOfTag = titleOfTag;
         this.action = action;
-        this.attrs = function (titleOfAttrs,actionOfAttrs) {
+        this.attrs = function (titleOfAttrs, actionOfAttrs) {
             this.titleOfAttrs = titleOfAttrs;
             this.actionOfAttrs = actionOfAttrs;
-           
         };
     }
 }
@@ -377,28 +375,52 @@ let tagA = new Attribute("a", "Тег \<a> является одним из ва
 tagA.attrs(
     "Активация ссылки с помощью комбинации клавиш. ",
     "Устанавливает координаты активной области.",
-   );
+);
 
 let tagDiv = new Attribute(
     "div",
     "Элемент \<div> является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого.");
-    tagDiv.attrs("align","Задает выравнивание содержимого тега.");
+tagDiv.attrs(
+    "align",
+    "Задает выравнивание содержимого тега.");
 let tagH1 = new Attribute(
     "h1",
     "HTML предлагает шесть заголовков разного уровня, которые показывают относительную важность секции, расположенной после заголовка. ");
-tagDiv.attrs("align","Определяет выравнивание заголовка. ");
-let tagHSpan = new Attribute(
+tagH1.attrs("align", "Определяет выравнивание заголовка. ");
+let tagSpan = new Attribute(
     "span",
     "Тег \<span> предназначен для определения строчных элементов документа. ");
-tagDiv.attrs("accesskey","Позволяет получить доступ к элементу с помощью заданного сочетания клавиш. ");
-// console.log(tagA);
-// console.log(tagDiv);
-// console.log(tagH1);
-// console.log(tagSpan);
-// console.log(tagInput);
-// console.log(tagForm);
-// console.log(tagOption);
-// console.log(tagSelect);
+tagSpan.attrs(
+    "accesskey",
+    "Позволяет получить доступ к элементу с помощью заданного сочетания клавиш. ");
+let tagInput = new Attribute(
+    "input",
+    "Тег \<input> является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем. ");
+tagInput.attrs(
+    "accept",
+    "Связывает поле с формой по её идентификатору.");
+let tagForm = new Attribute(
+    "form",
+    "Элемент HTML form (\<form>) представляет (собой) раздел документа, содержащий интерактивные элементы управления, которые позволяют пользователю отправлять информацию на веб-сервер.");
+tagForm.attrs(
+    "autocomplete",
+    "Указывает, могут ли элементы управления автоматически быть дописаны в форме браузером. ");
+let tagOption = new Attribute(
+    "option",
+    "Тег \<option> определяет отдельные пункты списка, создаваемого с помощью контейнера \<select>.");
+tagOption.attrs(
+    "disabled",
+    "Заблокировать для доступа элемент списка.");
 
+let tagSelect = new Attribute(
+    "select",
+    "Тег \<select> позволяет создать элемент интерфейса в виде раскрывающегося списка, а также список с одним или множественным выбором.");
+tagSelect.attrs(
+    "required\n",
+    "Список обязателен для выбора перед отправкой формы.");
 
+let arr = [tagA, tagDiv, tagH1, tagInput, tagForm, tagOption, tagSelect];
 
+for (const attribute of arr) {
+    console.log(attribute)
+}
