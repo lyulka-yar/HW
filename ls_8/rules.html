@@ -27,7 +27,7 @@
 
     <div class="rules rule5">
         <h2>Пятое правило Бойцовского клуба.</h2>
-        <p>Бойцы сражаются без обуви и голые по пояс.</p>
+        <p class="pep">Бойцы сражаются без обуви и голые по пояс.</p>
     </div>
     <div class="rules rule6">
         <h2>Шестое правило Бойцовского клуба.</h2>
@@ -39,13 +39,48 @@
             окончен.</p>
     </div>
     <div class="rules rule8">
-        <h2>Восьмое и последнее правило Бойцовского клуба.</h2>
+        <h2 class="text">Восьмое и последнее правило Бойцовского клуба.</h2>
         <p>Новичок обязан принять бой.</p>
+        <div class="test2">
+            <div class="test3">
+                <div class="test4">
+                    <div class="test4">
+                        <div class="test5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
     // Your awesome code here.....
+    // написати рекурсивну функцію, яка збирає всі назви класів з файлу rules.html в окремий масив. масив вивести в консоль
+
+    let body = document.body;
+    const classesArray = [];
+
+    // console.log(body.classList.length);
+    // console.log(body);
+    function recursion(elem, arr) {
+        if (elem.classList.length) {
+            if (elem.classList) {
+                // console.log(elem.classList)
+                arr.push(...elem.classList)
+            }
+        }
+        if (elem.children.length) {
+            // console.log(elem.children);
+            for (const child of elem.children) {
+                recursion(child, arr);
+            }
+        }
+    }
+
+    recursion(body, classesArray);
+
+    // console.log(classesArray)
+    console.log(new Set(classesArray))
 </script>
 </body>
 </html>
