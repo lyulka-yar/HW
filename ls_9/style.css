@@ -1,0 +1,28 @@
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 35px;
+    justify-content: space-around;
+}
+* {
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-color: grey;
+    max-width: 2120px;
+    margin: 0 auto;
+}
+p {
+    /*border: 1px solid black;*/
+    padding: 3px 5px;
+}
+.userCard {
+    border: 1px solid black;
+    padding: 5px;
+}
+.userCard ,div, p {
+    border: 1px solid tomato;
+    margin: 5px;
+}
