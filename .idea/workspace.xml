@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c66dbea6-9fe1-4322-8ba6-d251f5100ade" name="Changes" comment="HW90%">
-      <change afterPath="$PROJECT_DIR$/ls_7/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ls_7/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ls_7/сlosures.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ls_4/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/ls_4/app.js" afterDir="false" />
-    </list>
+    <list default="true" id="c66dbea6-9fe1-4322-8ba6-d251f5100ade" name="Changes" comment="HW90%" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +109,7 @@
       <workItem from="1638296674451" duration="13977000" />
       <workItem from="1638314251964" duration="128000" />
       <workItem from="1638314404788" duration="6000" />
-      <workItem from="1638385835371" duration="10120000" />
+      <workItem from="1638385835371" duration="10313000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1637092093642</created>

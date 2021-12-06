@@ -57,30 +57,33 @@
     // Your awesome code here.....
     // написати рекурсивну функцію, яка збирає всі назви класів з файлу rules.html в окремий масив. масив вивести в консоль
 
-    let body = document.body;
-    const classesArray = [];
+    // let body = document.body;
+    // const classesArray = [];
+    //
+    // // console.log(body.classList.length);
+    // // console.log(body);
+    // function recursion(elem, arr) {
+    //     if (elem.classList.length) {
+    //         if (elem.classList) {
+    //             // console.log(elem.classList)
+    //             arr.push(...elem.classList)
+    //         }
+    //     }
+    //     if (elem.children.length) {
+    //         // console.log(elem.children);
+    //         for (const child of elem.children) {
+    //             recursion(child, arr);
+    //         }
+    //     }
+    // }
+    //
+    // recursion(body, classesArray);
+    //
+    // // console.log(classesArray)
+    // console.log(new Set(classesArray))
 
-    // console.log(body.classList.length);
-    // console.log(body);
-    function recursion(elem, arr) {
-        if (elem.classList.length) {
-            if (elem.classList) {
-                // console.log(elem.classList)
-                arr.push(...elem.classList)
-            }
-        }
-        if (elem.children.length) {
-            // console.log(elem.children);
-            for (const child of elem.children) {
-                recursion(child, arr);
-            }
-        }
-    }
+    /*second*/
 
-    recursion(body, classesArray);
-
-    // console.log(classesArray)
-    console.log(new Set(classesArray))
 </script>
 </body>
 </html>
