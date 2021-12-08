@@ -1,10 +1,48 @@
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
 //     Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+let elements = document.body;
 //
+// elements.addEventListener("mousedown", function (ev) {
+//     ev.preventDefault();
+//     console.log(ev.target.localName+" " + "- attribute");
+//     console.log("----------");
+//     console.log(ev.target.className+" " + "- classes");
+//     console.log(ev.target.id+ " " + "- id");
+//     console.log("----------");
+//     console.log(ev.target.offsetHeight+" " + "px - height");
+//     console.log(ev.target.offsetWidth+" " + "px - width");
+// });
+
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
 //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+
+// elements.addEventListener("mousedown", function (ev) {
+//     let popUpDiv = document.createElement("div");
+//     ev.preventDefault();
+//
+//     let popUpTitle = document.createElement("h4");
+//     let elemClass = document.createElement("p");
+//     let elemId = document.createElement("p");
+//     let elemSize = document.createElement("span");
+//
+//     popUpTitle.innerText=`${ev.target.nodeName} - attribute name`;
+//     elemClass.innerText=`${ev.target.className} - classes name`;
+//     elemId.innerText=`${ev.target.id} - id`;
+//     elemSize.innerText=`heigth : ${ev.target.offsetHeight}px - width : ${ev.target.offsetWidth}px`;
+//
+//     popUpDiv.classList.add("popUpDiv");
+//     popUpTitle.classList.add("popUpTitle");
+//     elemId.classList.add("elemId");
+//     elemSize.classList.add("elemSize");
+//     ev.target.after(popUpDiv);
+//     popUpDiv.append(popUpTitle, elemClass, elemId, elemSize);
+// });
+
+
 //
 // -- взять массив пользователей
 // let usersWithAddress = [
