@@ -8,7 +8,9 @@
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
+
     .popUpDiv {
         max-width: 266px;
         position: relative;
@@ -17,22 +19,123 @@
         padding: 5px 10px;
         border: 1px solid black;
         border-radius: 10px;
-        background-color: rgba(230,234,234,0.8);
+        background-color: rgba(230, 234, 234, 0.8);
     }
+
     .popUpTitle {
-    text-align: center;
+        text-align: center;
         margin-bottom: 10px;
     }
+
     .elemId, .elemSize {
         margin: 5px 0;
     }
 
+    button {
+        padding: 5px 10px;
+    }
+
+    #content {
+        content: ' ';
+        max-width: 800px;
+        max-height: 500px;
+        border: 1px solid black;
+        margin: 0 auto;
+        padding: 24px 0;
+
+    }
+
+    .sliderWrap {
+        border: 1px solid red;
+        max-height: 450px;
+        max-width: 750px;
+        margin: 0 auto;
+        position: relative;
+        display: block;
+    }
+    img {
+        display: block;
+        height: 450px;
+        width: 750px
+    }
+
+    #left, #right {
+        cursor: pointer;
+    }
+
+    #left::before, #left::after {
+        content: "";
+        display: block;
+        height: 5px;
+        background-color: rgba(255,255,255, 0.8);
+        width: 20px;
+        position: absolute;
+        left: 10px;
+        top: calc(225px - 4px);
+    }
+
+    #left::before {
+        transform: rotate(45deg);
+        top: 232px;
+    }
+
+    #left::after {
+        transform: rotate(-45deg);
+    }
+
+    #right::before, #right::after {
+        content: "";
+        display: block;
+        height: 5px;
+        width: 20px;
+        background-color: rgba(255,255,255, 0.8);
+        position: absolute;
+        right: 10px;
+        top: calc(225px - 4px);
+    }
+
+    #left::before {
+        transform: rotate(45deg);
+        top: 232px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #left::after {
+        transform: rotate(-45deg);
+        border-top-right-radius: 5px;
+    }
+
+    #right::before {
+        transform: rotate(-45deg);
+        top: 232px;
+        border-bottom-left-radius: 5px;
+    }
+
+    #right::after {
+        transform: rotate(45deg);
+        border-top-left-radius: 5px;
+    }
+
 </style>
 <body>
-<div class="divClass wrapper" id="cover">
-    <h1 class="title" id="title">Template title</h1>
-    <p class="fishText test text lorem" id="textId">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet in nesciunt perferendis reiciendis temporibus. Accusantium at aut, esse in laborum natus non quidem voluptas voluptate!</p>
-</div>
+<!--<div class="divClass wrapper" id="cover">-->
+<!--    <h1 class="title" id="title">Template title</h1>-->
+<!--    <p class="fishText test text lorem" id="textId">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet in nesciunt perferendis reiciendis temporibus. Accusantium at aut, esse in laborum natus non quidem voluptas voluptate!</p>-->
+<!--</div>-->
+
+
+<!--            <input type="checkbox" name="statusChecker" id="status">-->
+<!--            <label for="status">person status</label>-->
+
+<!--            <input type="checkbox" name="ageChecker" id="age">-->
+<!--            <label for="age">person age</label>-->
+
+<!--            <input type="checkbox" name="cityChecker" id="city">-->
+<!--            <label for="city">person city</label>-->
+
+<!--            <button id="filter">filter</button>-->
+
+<div id="content"></div>
 <script src="additional.js"></script>
 </body>
 </html>
