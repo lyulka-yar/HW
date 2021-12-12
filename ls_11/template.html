@@ -13,6 +13,34 @@
         margin-top: 10px;
         padding: 3px 10px;
     }
+
+    button {
+        display: block;
+    }
+
+    body {
+        max-width: 1440px;
+    }
+
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 0 auto;
+    }
+
+    .wrap > div {
+        width: 100px;
+        border: 1px solid gray;
+        padding: 5px 7px;
+        border-radius: 5px;
+    }
+
+    .wrap > div {
+        box-shadow: gray 3px -1px 2px;
+    }
+
+
 </style>
 <body>
 
@@ -21,6 +49,14 @@
 <!--    <input type="number" placeholder="age" id="age">-->
 <!--</form>-->
 <!--<label for="localStorage"><input type="submit" value="submit" id="submit"></label>-->
+
+<!--<form name="carForm">-->
+<!--    <input name="model" placeholder="model" type="text">-->
+<!--    <input name="type" placeholder="type" type="text">-->
+<!--    <input name="volume" placeholder="volume" type="number">-->
+<!--    <button>add car</button>-->
+<!--</form>-->
+
 
 <script>
     /*HOME*/
@@ -33,34 +69,89 @@
     //
 
     // submit.onclick = function () {
-    //  let data = localStorage.setItem("users",JSON.stringify({"name":name,"age":age})) || [];
-    //     let users = localStorage.getItem("users");
-    //     console.log(users)
+    //  let data = localStorage.setItem("users",JSON.stringify({name,age}));
+    //     let user = localStorage.getItem("users");
     // }
 
 
     // -створити форму з інпутами для model,type та volume автівки.
     //     при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
 
-
+    // let form = document.forms.carForm;
+    //
+    // form.onsubmit = function (e) {
+    //     e.preventDefault();
+    //     let model = this.model.value;
+    //     let type = this.type.value;
+    //     let volume = this.volume.value;
+    //     let car = {model, type, volume};
+    //     let cars = JSON.parse(localStorage.getItem("cars")) || [];
+    //     cars.push(car);
+    //     localStorage.setItem("cars", JSON.stringify(cars));
+    // }
 
     /*CLASS*/
     // є масив -
-    // let users = [
-    //     {name: 'vasya', age: 31, status: false},
-    //     {name: 'petya', age: 30, status: true},
-    //     {name: 'kolya', age: 29, status: true},
-    //     {name: 'olya', age: 28, status: false},
-    //     {name: 'max', age: 30, status: true},
-    //     {name: 'anya', age: 31, status: false},
-    //     {name: 'oleg', age: 28, status: false},
-    //     {name: 'andrey', age: 29, status: true},
-    //     {name: 'masha', age: 30, status: true},
-    //     {name: 'olya', age: 31, status: false},
-    //     {name: 'max', age: 31, status: true}
-    // ];
-    // створити під кожен об'єкт свій блок з конопкою "додати до улюблених" при натисканні на яку об'єкт потрапляє до масиву favorites улюблених обраних об'єктів в локальному сховищі.
+    let users = [
+        {id: 1, name: 'vasya', age: 31, status: false},
+        {id: 2, name: 'petya', age: 30, status: true},
+        {id: 3, name: 'kolya', age: 29, status: true},
+        {id: 4, name: 'olya', age: 28, status: false},
+        {id: 5, name: 'max', age: 30, status: true},
+        {id: 6, name: 'anya', age: 31, status: false},
+        {id: 7, name: 'oleg', age: 28, status: false},
+        {id: 8, name: 'andrey', age: 29, status: true},
+        {id: 9, name: 'masha', age: 30, status: true},
+        {id: 10, name: 'olya', age: 31, status: false},
+        {id: 11, name: 'max', age: 31, status: true}
+    ];
+    // створити під кожен об'єкт свій блок з конопкою "додати до улюблених" при натисканні на яку об'єкт потрапляє до масиву favorites
+    // улюблених обраних об'єктів в локальному сховищі.
     // Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
+
+    let wishList = document.createElement("div");
+    let wrap = document.createElement("div");
+    wrap.classList.add("wrap");
+    let link = document.createElement("a");
+
+    localStorage.getItem("favorites") === null
+        ? link.innerText = `favorites - ${0}`
+        : link.innerText = `favorites - ${JSON.parse(localStorage.getItem("favorites")).length}`;
+
+
+    link.href = "favorites.html"
+    wishList.appendChild(link);
+    document.body.append(wishList);
+
+
+    users.forEach(person => {
+        let div = document.createElement("div");
+        let nameElem = document.createElement("p");
+        let ageElem = document.createElement("p");
+        let statusElem = document.createElement("p");
+        let toggleBtn = document.createElement("button");
+
+        nameElem.innerText = `name: ${person.name}`;
+        ageElem.innerText = `age: ${person.age}`;
+        statusElem.innerText = `status: ${person.status}`;
+        toggleBtn.innerText = "to favorites";
+
+        toggleBtn.onclick = function (ev) {
+            ev.preventDefault();
+
+            let favorite = {"name": person.name, "age": person.age, "status": person.status, "id": person.id};
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+            favorites.push(favorite);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            location.reload();
+            //не виходить зробити перевірку чи є цей елемент в localStorage хоч id різні всеодно додає це елемент декілька разів через цикл
+        }
+
+        div.append(nameElem, ageElem, statusElem, toggleBtn);
+        wrap.appendChild(div);
+    });
+    document.body.appendChild(wrap);
+
 </script>
 </body>
 </html>
