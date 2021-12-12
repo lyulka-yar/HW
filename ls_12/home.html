@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*.wrap {*/
+        /*    display: flex;*/
+        /*    gap: 5px;*/
+        /*    flex-wrap: wrap;*/
+        /*    justify-content: space-between;*/
+        /*}*/
+        /*body {*/
+        /*    padding: 20px 15px;*/
+        /*    max-width: 1440px;*/
+        /*    margin: 0 auto;*/
+        /*}*/
+        /*div > p {*/
+        /*    font-size: 12px;*/
+        /*}*/
+        /*.wrap > div {*/
+        /*    width: 250px;*/
+        /*    border: 1px solid black;*/
+        /*    border-radius: 5px;*/
+        /*    padding: 0 5px;*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+<script>
+    // 1.
+    // Отримати відповідь з https://jsonplaceholder.typicode.com/posts , та вивести в документ об'єкти. Застилізувати, за допомоги css, щоб отримати 5 елементів в рядку.
+    // Для кожного елементу свій блок div.post
+    // Всі характеристики повинні мати свої блоки всередені div.post
+    let wrap = document.createElement("div");
+    wrap.classList.add("wrap");
+    //
+    // let url = "https://jsonplaceholder.typicode.com/posts";
+    // fetch(url)
+    //     .then(response => response.json())
+    //     .then(posts => posts.map(item => {
+    //             let userId = document.createElement("p");
+    //             let div = document.createElement("div");
+    //         div.classList.add("post");
+    //             let id = document.createElement("p");
+    //             let title = document.createElement("p");
+    //             let body = document.createElement("p");
+    //
+    //             userId.innerText= `userId: ${item.userId}`;
+    //             id.innerText= `id: ${item.id}`;
+    //             title.innerText= `title: ${item.title}`;
+    //             body.innerText= `body: ${item.body}`;
+    //
+    //             div.append(userId, id, title, body)
+    //             wrap.appendChild(div);
+    //         })
+    //     );
+    // document.body.appendChild(wrap);
+
+
+    //     2.
+    // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті. // Не зрозумів в якому прикладі,на лекції просто виводили через templateString
+    //     Для кожного елементу свій блок div.comment
+    // Всі характеристики повинні мати свої блоки всередені div.comment
+    // https://jsonplaceholder.typicode.com/comments
+
+    
+    let url = "https://jsonplaceholder.typicode.com/comments";
+    fetch(url)
+        .then(response => response.json())
+        .then(comments => comments.map(comment => {
+                let div = document.createElement("div");
+                let postId = document.createElement("p");
+                let id = document.createElement("p");
+                let name = document.createElement("p");
+                let email = document.createElement("p");
+                let body = document.createElement("p");
+
+                postId.innerText = `postId : ${comment.postId}`;
+                id.innerText = `id : ${comment.id}`;
+                name.innerText = `name : ${comment.name}`;
+                email.innerText = `email : ${comment.email}`;
+                body.innerText = `body : ${comment.body}`;
+
+                div.append(postId,id,name,email,body);
+                wrap.appendChild(div);    
+        }
+        ));
+    document.body.appendChild(wrap);
+</script>
+</body>
+</html>
