@@ -3,14 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            padding: 3px 7px;
+        }
+
+        .wrapper {
+            position: relative;
+            width: 250px;
+            margin: 15px 5px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 5px 5px 9px gray;
+        }
+        .wrapper:hover {
+            background-color: darkgrey;
+            color: red;
+        }
+
+        .wrapper p {
+            padding: 5px 0;
+        }
+
+
+        body {
+            padding: 20px;
+        }
+
+        .close {
+            display: none;
+        }
+
+        .active {
+            background-color: tomato;
+            border-radius: 5px;
+        }
+
+
+        .addressHeader, .companyHeader, .geoHeader {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 3px 5px;
+        }
+
+    </style>
 </head>
+<body>
 <script>
     // 1.
     // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
     // https://jsonplaceholder.typicode.com/users
-    //     кожному елементу юзера створити кнопку, при клику на яку в окремий блок виводяться всі пости поточного юзера.
-    //     Кожному елементу post створити кнопку, при клику на яку в окремий блок виводяться всі коментарі поточного поста
+    //     кожному елементу юзера створити кнопку, при клику на яку в окремий блок виводяться всі пости поточного юзера.  / не зрозумів де пости??
+    //     Кожному елементу post створити кнопку, при клику на яку в окремий блок виводяться всі коментарі поточного поста / не зрозумів де коментарі??
+
+    const url = "https://jsonplaceholder.typicode.com/users";
+    let wrap = document.createElement("div");
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => data.map(element => {
+            let div = document.createElement("div");
+            let toggleAll = document.createElement("button");
+
+            let info = document.createElement("div");
+            let id = document.createElement("p");
+            let userName = document.createElement("p");
+            let phone = document.createElement("p");
+            let website = document.createElement("p");
+            let email = document.createElement("p");
+            let company = document.createElement("p");
+            let address = document.createElement("div");
+
+            let companyHeader = document.createElement("div");
+            let companyInfo = document.createElement("div");
+            let companyTitle = document.createElement("p");
+            let showCompany = document.createElement("button");
+            let companyBlock  = document.createElement("div");
+            let name = document.createElement("p");
+            let catchPhrase = document.createElement("p");
+            let bs = document.createElement("p");
+
+            companyHeader.classList.add("companyHeader");
+            companyBlock.classList.add("close");
+
+            let addressHeader = document.createElement("div");
+            let addressInfo = document.createElement("div");
+            let addressTitle = document.createElement("p");
+            let addressBlock = document.createElement("div");
+            let showAddress = document.createElement("button");
+            let street = document.createElement("p");
+            let suite = document.createElement("p");
+            let city = document.createElement("p");
+            let zipcode = document.createElement("p");
+            let geoBlock = document.createElement("div");
+            let showAddressGeo = document.createElement("button");
+            let geoHeader = document.createElement("div");
+            let geoTitle = document.createElement("p");
+            let geoLong = document.createElement("p");
+            let geoLatit = document.createElement("p");
+
+            address.classList.add("address");
+            addressBlock.classList.add("close");
+            addressHeader.classList.add("addressHeader");
+            geoBlock.classList.add("close");
+            showAddressGeo.innerText = "show more";
+            geoHeader.classList.add("geoHeader");
+
+            div.innerText = `${element.name}`;
+            div.classList.add("wrapper");
+            toggleAll.innerText = "show";
+            toggleAll.classList.add("btn");
+            info.classList.add("close");
+            id.innerText = `id: ${element.id}`;
+            userName.innerText = `username: ${element.username}`;
+            email.innerText = `email: ${element.email}`;
+            phone.innerText = `phone: ${element.phone}`;
+            website.innerText = `website: ${element.website}`;
+            company.classList.add("company");
+
+            toggleAll.onclick = function () {
+                companyTitle.innerText = "company:";
+                addressTitle.innerText = "address:";
+                info.classList.toggle("close");
+                showAddress.innerText = "show more";
+                showCompany.innerText = "show more";
+                toggleAll.classList.toggle("active");
+
+                info.append(id, userName, email, address, phone, website, company);
+                addressHeader.append(addressTitle,showAddress);
+                companyHeader.append(companyTitle,showCompany);
+            }
+            showAddress.onclick = function () {
+                showAddress.classList.toggle("active");
+                addressBlock.classList.toggle("close");
+                geoTitle.innerText = "geo: ";
+
+                street.innerText = element.address.street
+                suite.innerText = element.address.suite
+                city.innerText = element.address.city
+                zipcode.innerText = element.address.zipcode
+
+                addressBlock.append(street, suite, city, zipcode, geoHeader, geoBlock)
+                geoHeader.append(geoTitle,showAddressGeo);
+                geoBlock.append(geoLatit,geoLong);
+            }
+            showCompany.onclick = function () {
+                showCompany.classList.toggle("active");
+                companyBlock.classList.toggle("close");
+
+                name.innerText = `name: ${element.company.name}`
+                catchPhrase.innerText = `catchPhrase: ${element.company.catchPhrase}`
+                bs.innerText = `bs: ${element.company.bs}`
+                companyBlock.append(name,catchPhrase,bs)
+            }
+            showAddressGeo.onclick = function () {
+                showAddressGeo.classList.toggle("active");
+                geoBlock.classList.toggle("close");
+                geoLatit.innerText = `latitude: ${element.address.geo.lat}`
+                geoLong.innerText = `longitude: ${element.address.geo.lng}`
+            }
+
+            address.append(addressHeader, addressInfo);
+            company.append(companyHeader, companyInfo);
+
+            addressInfo.appendChild(addressBlock);
+            companyInfo.appendChild(companyBlock);
+
+            div.append(toggleAll, info)
+            wrap.appendChild(div);
+        }));
+
+    document.body.appendChild(wrap);
+
+
 </script>
-<body>
 </body>
 </html>
