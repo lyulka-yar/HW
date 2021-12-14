@@ -30,7 +30,8 @@
     let wrap = document.createElement("div");
     wrap.classList.add("wrap");
     document.body.appendChild(wrap);
-    let dbOfProducts;
+
+
     //broccoli   https://foodmarketbd.com/wp-content/uploads/2021/01/product05.jpg
     //potato https://cdn.somahar.xyz/product/dCl338ibfPxyXLEJLEel2.jpg
     //beetroot https://marketfresh.ae/image/cache/catalog/Products%20Vegetables/Beet%20Root-278x320.png
@@ -49,6 +50,7 @@
         let dataBase = JSON.parse(localStorage.getItem("dataBase")) || [];
         dataBase.push(product);
         localStorage.setItem("dataBase", JSON.stringify(dataBase));
+        productForm.reset();
     }
 
 

@@ -3,23 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .active {
+            background-color: antiquewhite;
+            border-radius: 4px;
+        }
+
+        .close {
+            display: none;
+        }
+
+        .showInfo {
+            margin-top: 8px;
+            padding: 3px 8px;
+            width: 100%;
+            background-color: indianred;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+        }
+
+        .userCard {
+            margin: 10px;
+            border: 1px solid black;
+            width: 275px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: antiquewhite;
+        }
+
+        .userCard:hover {
+            box-shadow: 2px 3px 8px black;
+        }
+
+        .userPost {
+            margin-top: 10px;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        .userPostBlock, .userCommentBlock {
+            border: 1px solid black;
+            margin: 5px 5px;
+            padding: 5px;
+            border-radius: 4px;
+            position: relative;
+        }
+        .userPostBlock {
+            background-color: lightgrey;
+        }
+        .userCommentBlock {
+         background-color: darkgrey;
+        }
+
+        .showComment {
+            position: absolute;
+            right: 5px;
+            top: 3px;
+            padding: 1px 8px;
+        }
+
+
+    </style>
 </head>
 <body>
 <script>
+    // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
+    // https://jsonplaceholder.typicode.com/users
+    //     кожному елементу юзера створити кнопку, при клику на яку в окремий блок виводяться всі пости поточного юзера.
+    //     Кожному елементу post створити кнопку, при клику на яку в окремий блок виводяться всі коментарі поточного поста.
+
     let wrap = document.createElement("div");
     document.body.appendChild(wrap);
-    const url = "https://jsonplaceholder.typicode.com/users/";
-    fetch(url)
-    .then(response => response.json())
-    .then(data => data.map(user => {
-        let userCard = document.createElement("div");
-        let showInfo = document.createElement("button");
-        document.createElement("p")
-        let userName = document.createElement("p");
+    wrap.classList.add("wrap");
+    const url = "https://jsonplaceholder.typicode.com/users";
 
-    }));
-    
-    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => data.map(user => {
+
+            let userCard = document.createElement("div");
+            let userPost = document.createElement("div");
+            let userComment = document.createElement("div");
+            userCard.classList.add("userCard");
+            userPost.classList.add("userPost");
+            userComment.classList.add("userComment");
+
+
+            let showInfo = document.createElement("button");
+            let userId = document.createElement("p");
+            let userEmail = document.createElement("p");
+            let name = document.createElement("p");
+            let userName = document.createElement("p");
+
+            name.innerText = `name: ${user.name}`;
+            userName.innerText = `userName: ${user.username}`;
+            userEmail.innerText = `userEmail: ${user.email}`;
+            userId.innerText = `userId: ${user.id}`;
+            showInfo.innerText = "show";
+            showInfo.classList.add("showInfo");
+            userPost.classList.add("close");
+            userComment.classList.add("close");
+
+
+            showInfo.onclick = () => {
+                userPost.innerText = "";
+                showInfo.classList.toggle("active");
+                userPost.classList.toggle("close");
+
+                const url = `https://jsonplaceholder.typicode.com/users/${user.id}/posts`;
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => data.map(post => {
+                        let userPostBlock = document.createElement("div");
+                        let userPostId = document.createElement("p");
+                        let postId = document.createElement("p");
+                        let title = document.createElement("p");
+                        let body = document.createElement("p");
+                        let showComment = document.createElement("button");
+
+                        userId.innerText = `userId: ${post.userId}`;
+                        postId.innerText = `postId: ${post.id}`;
+                        title.innerText = `title: ${post.title}`;
+                        body.innerText = `body: ${post.body}`;
+                        showComment.innerText = "more";
+                        showComment.classList.add("showComment");
+                        userPostBlock.classList.add("userPostBlock");
+
+                        userPostBlock.append(userPostId, postId, title, body, showComment);
+                        userPost.append(userPostBlock);
+
+                        showComment.onclick = () => {
+                            userComment.innerHTML = "";
+                            showComment.classList.toggle("active");
+                            userComment.classList.toggle("close");
+
+
+                            const url = `https://jsonplaceholder.typicode.com/users/${post.userId}/comments`;
+
+                            fetch(url)
+                                .then(response => response.json())
+                                .then(data => data.map(comment => {
+
+                                    if (post.userId === comment.postId) {
+
+                                        let userCommentBlock = document.createElement("div");
+                                        let commentId = document.createElement("p");
+                                        let userCommentName = document.createElement("p");
+                                        let email = document.createElement("p");
+                                        let commentBody = document.createElement("p");
+
+                                        commentId.innerText = `commentId: ${comment.id}`;
+                                        userCommentName.innerText = `name: ${comment.name}`;
+                                        email.innerText = `email: ${comment.email}`;
+                                        commentBody.innerText = `body: ${comment.body}`;
+                                        userCommentBlock.classList.add("userCommentBlock");
+
+                                        userPostBlock.appendChild(userComment);
+                                        userCommentBlock.append(commentId, userCommentName, email, commentBody);
+                                        userComment.appendChild(userCommentBlock);
+                                    }
+
+
+                                }));
+                        }
+                    }));
+            }
+            userCard.append(name, userName, userId, userEmail, showInfo, userPost);
+            wrap.appendChild(userCard);
+        }));
+
+
 </script>
 </body>
 </html>
