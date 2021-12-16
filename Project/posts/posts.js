@@ -34,7 +34,7 @@ function getComments() {
     const url = `https://jsonplaceholder.typicode.com/users/${post.userId}/comments`;
     fetch(url)
         .then(response => response.json())
-        .then(comments => comments.forEach(comment => {
+        .then(comments => comments.map(comment => {
             if (post.userId === comment.postId) {
                 let commentCard = document.createElement("div");
                 let postId = document.createElement("p");

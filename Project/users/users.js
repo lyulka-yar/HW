@@ -77,10 +77,7 @@ class Details {
 
         posts();
     }
-
-
 }
 
 let detail = new Details(person.id, person.name, person.username, person.email, person.address, person.phone, person.website, person.company);
-
 detail.parser();

@@ -5,14 +5,11 @@ fetch(url)
     .then(response => response.json())
     .then(data => data.map(user => {
 
-
             class User {
-
                 constructor(name, id) {
                     this.name = name;
                     this.id = id;
                 }
-
 
                 html() {
                     let userCard = document.createElement("div");
@@ -33,7 +30,6 @@ fetch(url)
                         userCard.appendChild(details);
 
                         details.onclick = () => {
-                            // e.preventDefault();
                             localStorage.removeItem("user");
                             localStorage.setItem("user", JSON.stringify(user));
                         }
