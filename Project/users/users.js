@@ -1,6 +1,7 @@
 function storage() {
     return JSON.parse(localStorage.getItem("user"));
 }
+
 let person = storage();
 
 class Details {
@@ -14,7 +15,8 @@ class Details {
         this.website = website;
         this.company = company;
     }
-    parser () {
+
+    parser() {
         let container = document.getElementsByClassName("container")[0];
         let userCard = document.createElement("div");
         userCard.classList.add("userCard");
@@ -48,28 +50,37 @@ class Details {
 
             showPosts.onclick = () => {
                 showPosts.classList.toggle("close")
-                    let postContainer = document.createElement("div");
+                let postContainer = document.createElement("div");
                 const url = `https://jsonplaceholder.typicode.com/users/${person.id}/posts`;
                 fetch(url)
-                .then(response => response.json())
-                .then(posts => posts.map(post => {
-                    postContainer.classList.add("postContainer");
-                    let postTitle = document.createElement("div");
-                    postTitle.innerHTML =`<b>title:</b> ${post.title}`;
-                    let more = document.createElement("a");
-                    more.innerText = "more";
-                    more.href="../posts/post-details.html";
-                    postTitle.appendChild(more);
-                    postContainer.appendChild(postTitle);
-                }));
-                    container.appendChild(postContainer);
+                    .then(response => response.json())
+                    .then(posts => posts.map(post => {
+                        postContainer.classList.add("postContainer");
+                        let postTitle = document.createElement("div");
+                        let title = document.createElement("p");
+                        let more = document.createElement("a");
+                        title.innerHTML = `<span class="bold">title:</span> ${post.title}`;
+                        more.innerText = "more";
+                        more.href = "../posts/post-details.html";
+
+                        more.onclick = () => {
+                            let postInfo = {userId: post.userId, id: post.id, title: post.title, body: post.body};
+                            localStorage.setItem("postInfo", JSON.stringify(postInfo));
+                        }
+
+                        postTitle.append(title, more);
+                        postContainer.appendChild(postTitle);
+                    }));
+                container.appendChild(postContainer);
             }
         }
+
         posts();
     }
 
 
 }
+
 let detail = new Details(person.id, person.name, person.username, person.email, person.address, person.phone, person.website, person.company);
 
 detail.parser();

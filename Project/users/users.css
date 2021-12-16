@@ -3,42 +3,79 @@
 .upper {
     text-transform: uppercase;
 }
-.userCard {
-    width: 500px;
-    padding: 0 15px;
-    position: relative;
-    background-color: antiquewhite;
-    flex-direction: column;
+body {
+    width: 100vw;
 }
-
 .bold {
-    font-weight: 700;
-}
-.userCard span {
-    position: absolute;
-    left: 5%;
-}
-.userCard p {
-    border-bottom: 2px solid lightgray;
-}
-.showPosts {
-    padding: 3px;
-    width: 100%;
-    margin-bottom: 5px;
-}
-.container {
-    position: relative;
-    align-items: flex-start;
-}
-.postContainer {
-    position: absolute;
-    text-align: left;
-    left: 50%;
-    bottom: 15%;
-}
-.postContainer p {
-    padding: 5px 0;
+    font-weight: var(--bold);
 }
 .close {
     display: none;
+}
+.container {
+    width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.userCard {
+    width: var(--w40perc);
+    padding: 0 var(--pad_15);
+    position: relative;
+    background-color: var(--antiq);
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.userCard span {
+    position: absolute;
+    left: 3.5%;
+    text-transform: capitalize;
+}
+.userCard p, .postContainer div {
+    border-bottom: 2px solid var(--lightGray);
+}
+.showPosts {
+    padding: 3px;
+    width: var(--w100perc);
+    margin-bottom: var(--mar_5);
+}
+
+.postContainer {
+    display: flex;
+    width: var(--w100perc);
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 5px 3px;
+    justify-content: center;
+}
+.postContainer div {
+    width: 45%;
+    margin: var(--mar_5);
+    padding: var(--pad_5);
+    border: 1px solid var(--mainColor);
+    border-radius: var(--radius);
+    background-color: var(--lightGray);
+}
+.postContainer p {
+    padding: var(--pad_5) 0;
+}
+.postContainer a {
+    display: block;
+    width: var(--w100perc);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: var(--fontSize);
+    text-align: center;
+    padding: 2px 0;
+    color: var(--mainWhite);
+    border-radius: var(--radius);
+    font-weight: var(--bold);
+    background-color: var(--darkBlue);
+    transition: background-color ease 0.3s;
+}
+.postContainer a:hover {
+    background-color: var(--blue);
 }

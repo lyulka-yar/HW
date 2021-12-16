@@ -1,2 +1,79 @@
 @import "../main.css";
 
+.container {
+    display: flex;
+    width: 100vw;
+    margin: auto;
+}
+
+.close {
+    display: none;
+}
+
+.bold {
+    font-weight: var(--bold);
+    position: absolute;
+    left: 3.5%;
+}
+
+.postContainer {
+    background-color: antiquewhite;
+}
+
+.postContainer h3 {
+    text-align: center;
+    margin-bottom: var(--mar_10);
+    text-transform: uppercase;
+}
+
+.postContainer, .commentCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: var(--w65perc);
+    text-align: center;
+    border: 1px solid var(--mainColor);
+    padding: var(--pad_5);
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.postContainer p,.commentCard p {
+    padding-bottom: 7px;
+    width: var(--w55perc);
+    text-align: justify;
+    justify-content: center;
+    font-size: 14px;
+}
+.commentsWrap {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.commentCard {
+    text-align: center;
+    background-color: var(--lightGray);
+    width: 24%;
+    margin: var(--mar_5);
+}
+/*.commentCard p {*/
+/*    width: 50%;*/
+/*}*/
+
+
+.container button {
+    width: 90%;
+    padding: var(--pad_10) 0;
+    background-color: var(--darkBlue);
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--mainWhite);
+    border-radius: var(--radius);
+    transition: background-color ease 0.4s;
+}
+.container button:hover {
+    background-color: var(--blue);
+}
+

@@ -33,8 +33,8 @@ fetch(url)
                         userCard.appendChild(details);
 
                         details.onclick = () => {
-
-                            localStorage.clear();
+                            // e.preventDefault();
+                            localStorage.removeItem("user");
                             localStorage.setItem("user", JSON.stringify(user));
                         }
                     }
