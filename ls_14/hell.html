@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dev hell</title>
+</head>
+<body>
+<script>
+    //  TODO HW
+    // Зробити свій розпорядок дня.
+    // У вас має бути більше 10 асинхронних дій з рандомними затримками.
+    // Вам необхідно синхронізувати всі свої дії за допомогою промісів та async await (Код має бути написаний окремо)
+    // Затримка має бути НЕ в порядку зростання, а будь яка. При тому ваші дії мають бути синхронізовані.
+    // // Напиклад:
+    // -  Прoкинутись - 0.3с
+    // -  Поснідати - 1с
+    // -  Піти в душ - 0.5с
+    // -  Дочекатись автобус - 3с
+    // -  Пообідати - 1с
+    // -  І так далі
+
+
+    // const loseBrush = Math.round(Math.random());
+    // const timeLeft = Math.round(Math.random())*20;
+    // const isSocks = Math.round(Math.random());
+    // const carBroken = Math.round(Math.random());
+    //
+    //
+    // function myDay(cb) {
+    //     setTimeout(() => {
+    //         const awakeTime = Math.round(Math.random() * Math.random() * (15 - 6) + 5);
+    //         if (awakeTime >= 9) {
+    //             cb(`Проспав, вже ${awakeTime}`);
+    //         } else {
+    //             cb(null, `Доброго ранку, вже ${awakeTime}-та, пішов умиватись =)`);
+    //         }
+    //     }, 2500);
+    // }
+    //
+    // function brushTeeth(cb) {
+    //     setTimeout(() => {
+    //
+    //         if (loseBrush) {
+    //             cb(`вже не встигаю, на роботі почищу`);
+    //         } else {
+    //             cb(null, `Супер, можна йти снідати`);
+    //         }
+    //     }, 1500);
+    // }
+    //
+    // function goToEat(cb) {
+    //     setTimeout(() => {
+    //
+    //         if (timeLeft > 10) {
+    //             cb(`вже не встигаю, на роботі щось куплю.... `);
+    //         } else {
+    //             cb(null, `Яєчня з помідорами та спаржею - смакота`);
+    //         }
+    //     }, 190);
+    // }
+    //
+    // function clothOn(cb) {
+    //     setTimeout(() => {
+    //
+    //         if (isSocks) {
+    //             cb(`Де мої шкарпетки, знов загубив....`);
+    //         } else {
+    //             cb(null, `Круто що купив оганайзер для шкарпеток!!`);
+    //         }
+    //     }, 100);
+    // }
+    //
+    // function busStop(cb) {
+    //     setTimeout(() => {
+    //
+    //         if (carBroken) {
+    //             cb(`Антифриз витік, знову їхати в міському транспорті.....`);
+    //         } else {
+    //             cb(null, `Не дарма завчасно зробив ТО - тепер жодних сюрпризів`);
+    //         }
+    //     }, 3000);
+    // }
+    //
+    // function atWork(cb) {
+    //     setTimeout(() => {
+    //         const late = Math.round(Math.random() * Math.random() * (17 - 8) + 8);
+    //         if (late) {
+    //             cb(`Зупізнився на мітінг, шеф буде не в захваті!!`);
+    //         } else {
+    //             cb(null, `Добре, що не було заторів, буде час перевірити вхідні листи`);
+    //         }
+    //     }, 700);
+    // }
+    //
+    // function meeting(cb) {
+    //     setTimeout(() => {
+    //         const time = Math.round(Math.random() * 25);
+    //         if (time > 10) {
+    //             cb(`Знову накинули роботи з іншого відділу!!`);
+    //         } else {
+    //             cb(null, `Добре, що я зміг аргументувати чому наш відділ не зможе виконати дану роботу`);
+    //         }
+    //     }, 1300);
+    // }
+    //
+    // function coffeeBreak(cb) {
+    //     setTimeout(() => {
+    //         const coffeTime = Math.round(Math.random()) * 20;
+    //         if (coffeTime <= 10) {
+    //             cb(`Знову накинули роботи з іншого відділу!!`);
+    //         } else {
+    //             cb(null, `Добре, що я зміг аргументувати чому наш відділ не зможе виконати дану роботу, треба випити кави`);
+    //         }
+    //     }, 1300);
+    // }
+    //
+    // function someJob(cb) {
+    //     setTimeout(() => {
+    //         const doingJob = Math.round(Math.random()) * 60;
+    //         if (doingJob <= 30) {
+    //             cb(`Боже як багато паперів....`);
+    //         } else {
+    //             cb(null, `Нарешті закінчив цю купу паперів`);
+    //         }
+    //     }, 9000);
+    // }
+    //
+    // function breakFast(cb) {
+    //     setTimeout(() => {
+    //         const breakFastTime = Math.round(Math.random()) * 16;
+    //         if (breakFastTime < 12) {
+    //             cb(`Боже да коли ж почнеться обід....`);
+    //         } else {
+    //             cb(null, `Можу пообідати`);
+    //         }
+    //     }, 9000);
+    // }
+    //
+    // function goHome(cb) {
+    //     setTimeout(() => {
+    //         const homeTime = Math.round(Math.random()) * 20
+    //         if (homeTime > 18) {
+    //             cb("Ще не час....");
+    //         } else {
+    //             cb(null, "Урааа, додому!");
+    //         }
+    //     }, 4000)
+    // }
+
+    // // Синхронізація CALLBACK HELL
+    //
+    // myDay((error, data) => {
+    //     if (error) {
+    //         console.log(error);
+    //         return;
+    //     } else {
+    //         console.log(data);
+    //     }
+    //     brushTeeth((error1, data1) => {
+    //         if (error1) {
+    //             console.log(error1);
+    //             return;
+    //         } else {
+    //             console.log(data1);
+    //         }
+    //         goToEat((error2, data2) => {
+    //             if (error2) {
+    //                 console.log(error2);
+    //                 return;
+    //             } else {
+    //                 console.log(data2);
+    //             }
+    //             clothOn((error3, data3) => {
+    //                 if (error3) {
+    //                     console.log(error3);
+    //                     return;
+    //                 } else {
+    //                     console.log(data3);
+    //                 }
+    //                 busStop((error4, data4) => {
+    //                     if (error4) {
+    //                         console.log(error4);
+    //                         return;
+    //                     } else {
+    //                         console.log(data4);
+    //                     }
+    //                     atWork((error5, data5)=>{
+    //                         if (error5) {
+    //                             console.log(error5);
+    //                             return;
+    //                         } else {
+    //                             console.log(data5);
+    //                         }
+    //                         meeting((error6, data6) => {
+    //                             if (error6) {
+    //                                 console.log(data6);
+    //                                 return;
+    //                             } else {
+    //                                 console.log(data6)
+    //                             }
+    //                             coffeeBreak((error7, data7) => {
+    //                                 if (error7) {
+    //                                     console.log(error7);
+    //                                     return;
+    //                                 } else {
+    //                                     console.log(data7);
+    //                                 }
+    //                                 someJob((error8, data8) => {
+    //                                     if (error8) {
+    //                                         console.log(error8);
+    //                                         return;
+    //                                     } else {
+    //                                         console.log(data8)
+    //                                     }
+    //                                     breakFast((error9, data9) => {
+    //                                         if (error9) {
+    //                                             console.log(error9);
+    //                                             return;
+    //                                         } else {
+    //                                             console.log(data9);
+    //                                         }
+    //                                         goHome((error10, data10) => {
+    //                                             if (error10) {
+    //                                                 console.log(error10);
+    //                                             } else {
+    //                                                 console.log(data10);
+    //                                             }
+    //                                         });
+    //                                     });
+    //                                 });
+    //                             });
+    //                         });
+    //                     });
+    //                 });
+    //             });
+    //         });
+    //     });
+    // });
+
+    // PROMISE
+    const loseBrush = Math.round(Math.random());
+    const timeLeft = Math.round(Math.random()) * 20;
+    const isSocks = Math.round(Math.random());
+    const carBroken = Math.round(Math.random());
+    const awakeTime = Math.round(Math.random() * Math.random() * (15 - 6) + 5);
+
+    function brushTeeth(brush) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (brush) {
+                    console.log(`Супер зуби почистив, можна йти снідати`)
+                    resolve("Have a nice breakfast");
+                } else {
+                    console.log(`вже не встигаю почистити зуби та поснідати, на роботі вже....`);
+                    reject("Go to bad too late...");
+                }
+            }, 1500);
+        });
+    }
+    function goToEat() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (timeLeft > 10) {
+                        console.log(`Яєчня з помідорами та спаржею - смакота`)
+                        resolve("So tasty");
+                    } else {
+                        console.log(`Вже не встигаю, на роботі щось куплю поїсти.... `);
+                        reject("Stay hungry, need to prepare food from previously day..")
+                    }
+                }, 190);
+            });
+        }
+    function clothOn() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (isSocks) {
+                    console.log("Круто що купив оганайзер для шкарпеток!!")
+                    resolve("Discipline");
+                } else {
+                    console.log(`Де мої шкарпетки, знов загубив....`)
+                    reject("Be a little bit careful");
+                }
+            }, 100);
+        });
+    }
+    function busStop() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (carBroken) {
+                    console.log(`Не дарма завчасно зробив ТО - тепер жодних сюрпризів`);
+                    resolve("Early repair save time and don`t have surprises");
+                } else {
+                    console.log(`Антифриз витік, знову їхати в міському транспорті.....`);
+                    reject("Need to do routine maintenance earlier");
+                }
+            }, 3000);
+        });
+    }
+    function atWork() {
+     return new Promise((resolve, reject) => {
+         setTimeout(() => {
+             const late = Math.round(Math.random() * Math.random() * (17 - 8) + 8);
+             if (late) {
+                 console.log(`Добре, що не було заторів, буде час перевірити вхідні листи`);
+                 resolve("Always go earlier than you need");
+             } else {
+                 console.log(`Зупізнився на мітінг, ШЕФ буде не в захваті!!`);
+                 reject("Don`t be late.");
+             }
+         }, 700);
+     });
+    }
+    function meeting() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const time = Math.round(Math.random() * 25);
+                if (time > 10) {
+                    console.log(`Добре, що я зміг аргументувати чому наш відділ не зможе виконати дану роботу`)
+                    resolve("Meeting time");
+                } else {
+                    console.log(`Знову накинули роботи з іншого відділу!!`)
+                    reject("Many work");
+                }
+            }, 1300);
+        });
+    }
+    function coffeeBreak() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const coffeeTime = Math.round(Math.random()) * 20;
+                if (coffeeTime <= 10) {
+                    console.log(`Добре, що я зміг аргументувати чому наш відділ не зможе виконати дану роботу, треба випити кави`);
+                   resolve("Coffee it`s good time spending with teammates");
+                } else {
+                    console.log(`Знову накинули роботи з іншого відділу!!`);
+                   reject("Too much paper work,");
+                }
+            }, 1300);
+        });
+
+    }
+    function someJob() {
+       return new Promise((resolve, reject) => {
+           setTimeout(() => {
+               const doingJob = Math.round(Math.random()) * 60;
+               if (doingJob <= 30) {
+                   console.log(`Нарешті закінчив цю купу паперів`)
+                   resolve("Doing some stuff");
+               } else {
+                   reject(`To much paper work....`);
+               }
+           }, 9000);
+       });
+    }
+    function breakFast() {
+       return new Promise((resolve, reject) => {
+           setTimeout(() => {
+               const breakFastTime = Math.round(Math.random()) * 16;
+               if (breakFastTime < 12) {
+                   console.log(`Можу пообідати`)
+                   resolve("When you hungry - more productivity");
+               } else {
+                   console.log(`Боже да коли ж почнеться обід....`)
+                   reject("Don`t be a pussy");
+               }
+           }, 9000);
+       });
+    }
+    function goHome() {
+       return new Promise((resolve, reject) => {
+           setTimeout(() => {
+               const homeTime = Math.round(Math.random()) * 20
+               if (homeTime > 18) {
+                   console.log("Урааа, додому!");
+                   resolve("Dobby is FREEE");
+               } else {
+                   console.log("Ще не час....");
+                   reject("Work time");
+               }
+           }, 4000);
+       });
+    }
+
+    function myDay(awake) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (awake < 9) {
+                    console.log(`Доброго ранку, вже ${awake}-та, пішов умиватись =)`)
+                    resolve("Good morning");
+                } else {
+                    console.log(`Проспав, вже ${awake}`)
+                    reject("I am late to work");
+                }
+            }, 2500);
+        })
+            .then(awake => {
+                console.log(awake);
+               return brushTeeth(loseBrush)
+            })
+            .then(isClear => {
+                console.log(isClear);
+                return goToEat(timeLeft);
+            })
+            .then(food => {
+                console.log(food);
+                return clothOn(isSocks);
+            })
+            .then(cloth => {
+                console.log(cloth);
+                return busStop(carBroken);
+            })
+            .then(bus => {
+                console.log(bus);
+                return atWork();
+            })
+            .then(work => {
+                console.log(work);
+                return meeting();
+            })
+            .then(meetingCall => {
+                console.log(meetingCall);
+                return coffeeBreak();
+            })
+            .then(coffeeRelax => {
+                console.log(coffeeRelax);
+                return someJob();
+            })
+            .then(stuff => {
+                console.log(stuff);
+                return breakFast();
+            })
+            .then(lunch => {
+                console.log(lunch);
+                return goHome();
+            })
+            .then(free => {
+                console.log(free);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+    myDay(awakeTime);
+
+
+
+
+</script>
+</body>
+</html>
